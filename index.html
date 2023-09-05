@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/23fd127124.js" crossorigin="anonymous"></script>
+    <title>Popcorn Prose</title>
+</head>
+<body>
+    <nav class="navbar navpopcorn">
+        <div class="container">
+            <h1 class="">POPCORN PROSE</h1>
+        </div>
+    </nav>
+
+    <div class="container search-container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="input-group">
+                    <input type="text" id="search-input" class="form-control" placeholder="Digite o título do filme ou série">
+                    <div class="input-group-append">
+                        <button id="search-button" class="btn btn-danger" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <h1 id="search-heading"></h1>
+    </div>
+
+    <div class="container" id="popular-movies"></div>
+    <div class="container" id="results"></div>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/style_movie-details.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+  
+  <script src="https://kit.fontawesome.com/23fd127124.js" crossorigin="anonymous"></script>
+  <title>Movie Details</title>
+</head>
+<body>
+  <div class="container-fluid">
+
+    
+    <div class="row">
+      <div class="col-md-6 gradient">
+        
+        <div class="poster-container">
+          <img id="movie-poster" src="" alt="poster" class="img-fluid">
+          <div class="poster-info text-center">
+    
+            <ul class="list-unstyled d-flex justify-content-center align-items-center mt-3">
+
+              <li class="mx-3">
+                <i class="fa-solid fa-star" style="color: rgb(241, 241, 13);"></i>
+                <p id="rating"></p>
+              </li>
+
+              <li class="mx-3">
+                <i class="fa-solid fa-eye" style="color: rgb(2, 207, 2);"></i>
+                <p id="views">10.8M</p>
+              </li>
+              <li class="mx-3">
+                <i class="fa-solid fa-heart" style="color: rgb(255, 81, 81);"></i>
+                <p id="likes">10.8M</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      
+      </div>
+
+      <div class="col-md-6">
+
+        <div class="movie-info-container text-center">
+          <h1 id="movie-title"></h1>
+      
+          <div class="rating">
+            <i class="rating__star far fa-star"></i>
+            <i class="rating__star far fa-star"></i>
+            <i class="rating__star far fa-star"></i>
+            <i class="rating__star far fa-star"></i>
+            <i class="rating__star far fa-star"></i>
+          </div>
+      
+          <div class="box-review container-fluid mt-4">
+            <h3 class="mb-4">Compartilhe sua opinião</h3>
+            <form class="textarea-container container-fluid" action="" method="">
+              <textarea name="review" alt="review box" class="input-review"></textarea>
+              <button type="">
+                <span class="label-down"><i class="fa-solid fa-paper-plane main-text"></i> Enviar</span>
+                <span class="label-down"><i class="fa-solid fa-paper-plane main-text"></i> Enviar</span>
+              </button>
+
+        
+            </form>
+          </div>
+      
+          <div class="sinopse-box container-fluid mt-4">
+            <h4 class="mb-3">Sinopse</h4>
+            <p id="sinopse">
+              
+            </p>
+          </div>
+
+            <div class="more-info container-fluid">
+              <ul class="list-unstyled d-flex justify-content-center align-items-center text-center mt-3">
+  
+                <li class="mx-3">
+                  <i class="fa-solid fa-calendar"></i>
+                  <p id="release-year"></p>
+                </li>
+                
+                <li class="mx-3">
+                  <i class="fa-solid fa-film"></i>
+                  <p id="genre"></p>
+                </li>
+
+                <li class="mx-3">
+                  <i class="fa-solid fa-clock"></i>
+                  <p id="duration"></p>
+                </li>
+
+              </ul>
+            </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script src="scripts/movie-details.js"></script>
+</body>
+</html>

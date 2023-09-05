@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;600;700&display=swap');
+
+body{
+    background-color: #1e1e1e;
+}
+
+.navpopcorn{
+    background-color: #000;
+}
+
+.navpopcorn h1{
+    color: #d83333;
+    font-size: 30px;
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: bold;
+}
+
+.search-container{
+    padding: 20px;
+}
+
+.result {
+    margin-bottom: 30px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Merriweather Sans', sans-serif;
+
+    transition: all 0.3s ease-in-out;
+    
+
+}
+
+.result:hover{
+    box-shadow: 0px 0px 20px 10px #d83333;
+}
+
+.result img {
+    max-width: 186px;
+    max-height: 278px;
+    border-radius: 20px;
+}
+
+.result h2 {
+    font-size: 24px; /* Defina o tamanho da fonte desejado para os títulos h2 dentro da classe .result */
+    margin: 10px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.result .year {
+    font-size: 14px;
+    color: #666;
+}
+
+.result p {
+    font-size: 16px; /* Defina o tamanho da fonte desejado para os parágrafos dentro da classe .result */
+    margin: 10px;
+    text-align: justify;
+    padding: 20px;
+}
+
+#popular-movies h1{
+    color: #fff;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#search-heading{
+    color: #fff;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 28px;
+    padding: 20px;
+
+}
+
+@media screen and (max-width: 767px) {
+    .result img{
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+}
+
+
+
+
