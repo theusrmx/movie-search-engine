@@ -3,19 +3,20 @@ const searchInput = document.getElementById('search-input');
 const searchButton = document.getElementById('search-button');
 const resultsDiv = document.getElementById('results');
 const popularMoviesDiv = document.getElementById('popular-movies');
+const popularTVDiv = document.getElementById('popular-tv');
 
 // Função para carregar os filmes populares
 function loadPopularMovies() {
     const searchHeading = document.getElementById('search-heading');
-    searchHeading.innerHTML = `Filmes populares`;
+    searchHeading.innerHTML = `Em alta`;
 
-    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=pt-BR`)
+    fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}&language=pt-BR`)
         .then(response => response.json())
         .then(data => {
             const popularMovies = data.results;
             popularMovies.forEach(movie => {
                 // Verifique se todas as informações necessárias estão presentes
-                if (movie.poster_path) {
+                if (movie.poster_path, movie.overview) {
                     const movieDiv = document.createElement('div');
                     movieDiv.classList.add('result');
                     movieDiv.innerHTML = `
@@ -47,6 +48,44 @@ function loadPopularMovies() {
         });
 }
 
+function loadPopularSeries(){
+    fetch(`https://api.themoviedb.org/3/trending/tv/week?api_key=${apiKey}&language=pt-BR`)
+        .then(response => response.json())
+        .then(data => {
+            const popularTV = data.results;
+            popularTV.forEach(tv => {
+                // Verifique se todas as informações necessárias estão presentes
+                if (tv.poster_path, tv.overview) {
+                    const tvDiv = document.createElement('div');
+                    tvDiv.classList.add('result');
+                    tvDiv.innerHTML = `
+                    <div class="row justify-content-center hover-border">
+                        <div class="col-md-3">
+                            <img src="https://image.tmdb.org/t/p/w500${tv.poster_path}" alt="${tv.name} Poster" class="img-fluid">
+                        </div>
+                        <div class="col-md-9">
+                            <h2>${tv.name} <span class="year">(${tv.first_air_date.slice(0, 4)})</span></h2>
+                            <p class="lead">${tv.overview}</p>
+                        </div>
+                    </div>
+                    `;
+
+                    // Adicione o evento de clique à div para redirecionar para a página de detalhes
+                    tvDiv.addEventListener('click', () => {
+                        const tvId = tv.id;
+                        const contentType = 'tv'; // Você pode definir o tipo de conteúdo como 'movie' para filmes populares
+                        // Redirecione para a página de detalhes com o mediaType e id
+                        window.location.href = `movie-details.html?id=${tvId}&mediaType=${contentType}`;
+                    });
+
+                    popularTVDiv.appendChild(tvDiv);
+                }
+            });
+        })
+        .catch(error => {
+            console.error('Erro ao carregar filmes populares:', error);
+        });
+}
 
 // Função para realizar a pesquisa
 function performSearch(query) {
@@ -109,6 +148,7 @@ function performSearch(query) {
 // Carregue os filmes populares ao carregar a página
 window.addEventListener('load', () => {
     loadPopularMovies();
+    loadPopularSeries();
 });
 
 // Adicione um evento de clique ao botão de pesquisa

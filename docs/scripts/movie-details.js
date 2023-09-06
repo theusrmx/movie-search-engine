@@ -66,11 +66,17 @@ if (!movieId) {
         document.getElementById('views').textContent = formatNumber(views);
         document.getElementById('likes').textContent = formatNumber(likes);
         document.getElementById('sinopse').textContent = overview;
-        document.getElementById('duration').textContent = `${duration} min`;
+        if(duration){
+          document.getElementById('duration').textContent = `${duration} min`;
+        }else{
+          document.getElementById('duration').textContent = `Não definido`
+        }
+
+        
         document.getElementById('genre').textContent = genre;
         document.getElementById('release-year').textContent = releaseYear;
         document.getElementById('rating').textContent = rating.toFixed(1);
-
+        
         document.getElementById('loading-screen').style.display = 'none';
     })
     .catch(error => {
