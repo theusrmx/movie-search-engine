@@ -11,7 +11,7 @@ body{
 
 .navpopcorn h1, a{
     color: #d83333;
-    font-size: 30px;
+    font-size: 1.8rem;
     font-family: 'Merriweather Sans', sans-serif;
     font-weight: bold;
     text-decoration: none;
@@ -26,14 +26,14 @@ body{
 
 
 .search-container{
-    padding: 20px;
+    padding: 1.25rem;
 }
 
 .result {
-    margin-bottom: 30px;
+    margin-bottom: 1.8rem;
     background-color: #333;
-    padding: 20px;
-    border-radius: 20px;
+    padding: 1.25rem;
+    border-radius: 1.25rem;
     cursor: pointer;
     color: #fff;
     font-family: 'Merriweather Sans', sans-serif;
@@ -44,47 +44,47 @@ body{
 }
 
 .result:hover{
-    box-shadow: 0px 0px 20px 10px #d83333;
+    box-shadow: 0rem 0rem 1.25rem 0.6rem #d83333;
 }
 
 .result img {
-    max-width: 186px;
-    max-height: 278px;
-    border-radius: 20px;
+    max-width: 11rem;
+    max-height: 17rem;
+    border-radius: 1.25rem;
 }
 
 .result h2 {
-    font-size: 24px; /* Defina o tamanho da fonte desejado para os títulos h2 dentro da classe .result */
-    margin: 10px;
+    font-size: 1.5rem; /* Defina o tamanho da fonte desejado para os títulos h2 dentro da classe .result */
+    margin: 0.6rem;
     font-weight: bold;
-    padding: 20px;
+    padding: 1.25rem;
 }
 
 .result .year {
-    font-size: 14px;
+    font-size: 0.8rem;
     color: #666;
 }
 
 .result p {
-    font-size: 16px; /* Defina o tamanho da fonte desejado para os parágrafos dentro da classe .result */
-    margin: 10px;
+    font-size: 1rem; /* Defina o tamanho da fonte desejado para os parágrafos dentro da classe .result */
+    margin: 0.6rem;
     text-align: justify;
-    padding: 20px;
+    padding: 1.25rem;
 }
 
 #popular-movies h1{
     color: #fff;
     font-family: 'Merriweather Sans', sans-serif;
-    font-size: 35px;
+    font-size: 2rem;
     font-weight: bold;
-    padding: 10px;
+    padding: 0.6rem;
 }
 
 #search-heading{
     color: #fff;
     font-family: 'Merriweather Sans', sans-serif;
-    font-size: 28px;
-    padding: 10px;
+    font-size: 1.75rem;
+    padding: 0.6rem;
 
 }
 

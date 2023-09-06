@@ -61,8 +61,6 @@ if (!movieId) {
         minhaImagem.crossOrigin = 'Anonymous';
         minhaImagem.src = googleProxyURL + encodeURIComponent(posterPath);
         
-
-
         document.getElementById('views').textContent = formatNumber(views);
         document.getElementById('likes').textContent = formatNumber(likes);
         document.getElementById('sinopse').textContent = overview;
