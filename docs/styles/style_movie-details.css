@@ -1,10 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;600;700&display=swap');
+
 body{
     height: 100vh;
-    display: flex;
     background-color: #1e1e1e;
     font-size: 18px;
   }
-  
+
+  .navpopcorn{
+    background-color: #000;
+    margin: 0;
+  }
+
+  .navpopcorn h1, a{
+    color: #d83333;
+    font-size: 30px;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    
+    transition: all 0.3s ease 0s;
+}
+
+.navpopcorn a:hover{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+  .content{
+    margin-top: 20px;
+  }
+
   .poster-container{
     display: flex;
     flex-direction: column;

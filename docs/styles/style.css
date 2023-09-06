@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;600;700&display=swap');
 
 body{
@@ -9,12 +9,21 @@ body{
     background-color: #000;
 }
 
-.navpopcorn h1{
+.navpopcorn h1, a{
     color: #d83333;
     font-size: 30px;
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Merriweather Sans', sans-serif;
     font-weight: bold;
+    text-decoration: none;
+    
+    transition: all 0.3s ease 0s;
 }
+
+.navpopcorn a:hover{
+    text-decoration: none;
+    color: #fff;
+}
+
 
 .search-container{
     padding: 20px;
