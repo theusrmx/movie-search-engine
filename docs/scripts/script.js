@@ -96,6 +96,7 @@ function performSearch(query) {
     // Limpe os resultados anteriores
     resultsDiv.innerHTML = '';
     popularMoviesDiv.innerHTML = '';
+    popularTVDiv.innerHTML = '';
     fetch(`https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&query=${query}&language=pt-BR`)
         .then(response => response.json())
         .then(data => {
