@@ -37,10 +37,7 @@ body{
     cursor: pointer;
     color: #fff;
     font-family: 'Merriweather Sans', sans-serif;
-
     transition: all 0.3s ease-in-out;
-    
-
 }
 
 .result:hover{

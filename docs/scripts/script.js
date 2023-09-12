@@ -10,7 +10,7 @@ function loadPopularMovies() {
     const searchHeading = document.getElementById('search-heading');
     searchHeading.innerHTML = `Em alta`;
 
-    fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}&language=pt-BR`)
+    fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}&language=pt-BR`)
         .then(response => response.json())
         .then(data => {
             const popularMovies = data.results;
@@ -49,7 +49,7 @@ function loadPopularMovies() {
 }
 
 function loadPopularSeries(){
-    fetch(`https://api.themoviedb.org/3/trending/tv/week?api_key=${apiKey}&language=pt-BR`)
+    fetch(`https://api.themoviedb.org/3/trending/tv/day?api_key=${apiKey}&language=pt-BR`)
         .then(response => response.json())
         .then(data => {
             const popularTV = data.results;

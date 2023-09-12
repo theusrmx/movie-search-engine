@@ -29,6 +29,7 @@ if (!movieId) {
     .then(response => response.json())
     .then(data => {
         // Exiba os detalhes do filme ou série como desejar
+      
         const title = mediaType === 'movie' ? data.title : data.name;
 
         const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -54,8 +55,31 @@ if (!movieId) {
         const releaseYear = (data.release_date || data.first_air_date)?.substring(0, 4) || 'N/A'; // Ano de lançamento
         const overview = data.overview; // Sinopse
 
+        fetch(`https://api.themoviedb.org/3/${endpoint}/${movieId}/images`, options)
+        .then(response => response.json())
+        .then(data => {
 
-        document.getElementById('movie-title').textContent = title;
+          const logoImg = document.getElementById('logo');
+
+          // Verifique se há logos disponíveis em português
+          const logoPt = data.logos.find(logo => logo.iso_639_1 === 'pt');
+          const logoEn = data.logos.find(logo => logo.iso_639_1 === 'en');
+
+          if (logoPt) {
+            document.getElementById('movie-title').textContent = '';
+            logoImg.src = `https://image.tmdb.org/t/p/w300/${logoPt.file_path}`;
+          } else if(logoEn) {
+            // Se não encontrar uma logo em pt, exibir logo padrão (english)
+            document.getElementById('movie-title').textContent = '';
+            logoImg.src = `https://image.tmdb.org/t/p/w300/${logoEn.file_path}`
+          } else {
+            document.getElementById('movie-title').textContent = title;
+          }
+
+          
+        })
+        .catch(err => console.error(err));
+        
 
         const minhaImagem = document.getElementById('movie-poster');
         minhaImagem.crossOrigin = 'Anonymous';
@@ -75,7 +99,6 @@ if (!movieId) {
         document.getElementById('release-year').textContent = releaseYear;
         document.getElementById('rating').textContent = rating.toFixed(1);
         
-        document.getElementById('loading-screen').style.display = 'none';
     })
     .catch(error => {
         console.error('Erro ao carregar os detalhes do filme ou série:', error);
@@ -132,3 +155,13 @@ function executeRating(stars) {
   });
 }
 executeRating(ratingStars);
+
+
+const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NTc0Mzk1MTIwNDBlNTVjMzVmNzU4ZjMzOWM4ZTFkMSIsInN1YiI6IjY0ZTY5ZTUwN2Q1ZGI1MDEwMDk0YTk2ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.rzZhbE5Ch2tJsyNtSEnx58QkQDTlVZlqAuhV2t7Sulg'
+  }
+};
+
